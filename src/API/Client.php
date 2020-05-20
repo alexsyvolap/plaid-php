@@ -232,6 +232,24 @@ class Client
 
     /**
      * @param string $access_token
+     * @param string $account_id
+     * @return object
+     * @throws PlaidRequestException
+     */
+    public function createDwollaToken(string $access_token, string $account_id): object
+    {
+        $params = [
+            'access_token' => $access_token,
+            'account_id' => $account_id,
+        ];
+
+        return $this->httpClient->doRequest(
+            $this->httpClient->buildRequest('post', 'processor/dwolla/processor_token/create', $this->credentials($params))
+        );
+    }
+
+    /**
+     * @param string $access_token
      * @param string $webhook
      * @return object
      * @throws ClientExceptionInterface
