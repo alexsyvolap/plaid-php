@@ -13,7 +13,7 @@ class Plaid
     /**
      * Package version
      */
-    public const VERSION = '0.0.1';
+    public const VERSION = '0.0.2';
 
     /**
      * Host environment
